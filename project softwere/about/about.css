@@ -1,0 +1,230 @@
+*{
+    margin: 0%;
+    padding: 0;
+}
+body{
+
+}
+
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image: url("about-header.jpg");
+    background-size: cover;
+    position: relative;
+}
+.header .nav-par {
+    width: 100%;
+    height: 90px;
+    overflow: hidden;
+    position: fixed;
+    background-color: black;
+    opacity: .9;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+}
+.header .nav-par .logo{
+    width: 200px;
+    height: 100%;
+}
+.header .nav-par .logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.header h2{
+    color: rgb(245, 226, 226);
+    font-size: 7em;
+    text-transform: uppercase;
+    position: absolute;
+    top: 120px;
+    left: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.header >img{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    z-index: 0;
+    animation: rotate 30s infinite linear;
+}
+.header img:first-of-type{
+    top: 200px;
+    right: 20px;
+}
+.header img:nth-of-type(2){
+    top: 300px;
+    right: 500px;
+}
+.header img:nth-of-type(3){
+    top: 400px;
+    left: 20px;
+}
+.header img:nth-of-type(4){
+    top: 90%;
+    right: 100px;
+}
+.header img:nth-of-type(5){
+    top: 85%;
+    left: 200px;
+}
+.header img:last-of-type{
+    top: 450px;
+    left: 500px;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+.our-chef{
+    width: 100%;
+    height: 800px;
+    margin-top: 50px;
+    overflow: hidden;
+}
+.our-chef .image{
+    width: 40%;
+    height: 100%;
+    float: right;
+    margin-right: 50px;
+}
+.our-chef .image img{
+    width: 100%;
+    height: 100%;
+}
+
+.our-chef .text{
+    width: 40%;
+    height: 100%;
+    margin-left: 10%;
+}
+.our-chef .text h2{
+    color: rgb(94, 94, 94);
+    font-size: 2em;
+    margin-top: 200px;
+}
+.our-chef .text h1{
+    color: rgb(94, 94, 94);
+    font-size: 4em;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+.our-chef .text p{
+    color: rgb(61, 61, 61);
+    font-size: 1.25em;
+    line-height: 1.5;
+    margin-top: 20px;
+    text-transform: capitalize;
+    width: 90%;
+}
+.our-chef .text >img{
+    margin-top: 30px;
+    width: 30%;
+    height: 250px;
+}
+
+
+.gallery{
+    width: 100%;
+    height: 700px;
+    margin-top: 50px;
+    background-color: #0c0b09;
+    position: relative;
+}
+
+.gallery .text{
+    width: 100%;
+    height: 13%;
+    margin-bottom: 15px;
+    display: grid;
+    place-items: center;
+}
+.gallery .text h2{
+    color: #cda45e;
+    font-size: 2em;
+    text-transform: capitalize;
+}
+
+.gallery .images{
+    width: 100%;
+    height: 85%;
+    overflow: hidden;
+}
+.gallery .images div{
+    width: 24.8%;
+    height: 49.5%;
+    float: left;
+    border-right: 3px solid #8f7b4d;
+    border-bottom: 3px solid #8f7b4d;;
+
+}
+.gallery .images div img{
+    width: 100%;
+    height: 100%;
+}
+.gallery .images div img:hover{
+    width: 110%;
+    height:110%;
+    transition: all 1s ease-in-out;
+    cursor: pointer; 
+}
+
+
+.gallery .show-image-false{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.gallery .show-image-true{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0c0b09;
+    display: grid;
+    place-items: center;
+    opacity: .95;
+    animation: show 2s ease-in-out forwards;
+}
+.gallery .show-image-true img{
+    width: 50%;
+    height: 80%;
+    opacity: 1;
+}
+
+@keyframes show{
+    from{
+        width: 0;
+        height: 100%;
+    }
+    to{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+.footer{
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    display: grid;
+    place-items: center;
+    color: #FFF;
+    font-size: 2em;
+    background-image: url("footer-bg.jpg");
+}

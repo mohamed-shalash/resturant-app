@@ -1,0 +1,33 @@
+<%- include('ord_header.ejs') %>
+
+
+
+<table class="tbl" >
+    <tr class="trr">
+        <th>email</th>
+        <th>meal</th>
+        <th>price</th>
+        <th>firist name</th>
+        <th>last name</th>
+        <th>address</th>
+        <th>phone</th>
+        <th ></th>
+    </tr>
+    <% if(item.length >0) { %>
+        <% item.forEach(function(item,index){ %>
+            <form action="/ord_del<%=item.order_id%>" method="POST">
+            <tr class="trr">
+                <td ><%=item.email%></td>
+                <td ><%=item.meal_name%></td>
+                <td ><%=item.meal_price%></td>
+                <td ><%=item.firist_name%></td>
+                <td ><%=item.last_name%></td>
+                <td ><%=item.address%></td>
+                <td ><%=item.phonenum%></td>
+                <td ><input type="submit" name="submit" value="done" class="ord_btn"></td>
+            </tr>
+        </form>
+        <% }); %> 
+    <% }; %> 
+</table>  
+<%- include('ord_footer.ejs') %>

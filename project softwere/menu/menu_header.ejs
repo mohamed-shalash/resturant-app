@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-par{
+            width: 100%;
+            height: 80px;
+            background-color: #0c0b09;
+            position: fixed;
+            z-index: 10;
+        }
+        
+        .nav-par .links{
+            width: 30%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0px;
+        }
+        .nav-par .logo{
+            width: 10%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 45%;
+        }
+        .nav-par .logo img{
+            width: 100%;
+            height: 100%;
+            padding-top: 5px;
+        
+        }
+        .nav-par .regest{
+            width: 30%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0px;
+            overflow: hidden;
+        }
+        
+        
+        .nav-par .regest button{
+            width: 49.7%;
+            height: 100%;
+            border: none;
+            background-color: #0c0b09;
+            color: #DDD;
+            text-transform: capitalize;
+            border-bottom: 2px solid #99660e;
+            border-left: 1px solid #99660e;
+            float: left;
+            font-size: 1.5em;
+        }
+        .nav-par .regest button:hover{
+            background-color: #DDD;
+            color: black;
+            cursor: pointer;
+            transition: all .5s ease-in-out;
+        }
+        
+        
+        .login{
+            width: 500px;
+            height: 0;
+            position: absolute;
+            top: 80px;
+            right: 70px;
+            display: none;
+        }
+        
+        .login-show{
+            width: 500px;
+            height: 250px;
+            position: absolute;
+            top: 80px;
+            right: 70px;
+            z-index: 9;
+            background-color: #252525;
+            border: 2px solid #bd7800;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 10px 10px 30px 1px #CCC;
+            transform-origin: top;
+            transition: all 2s ease-in-out;
+            animation: moveing 2s ease-in-out;
+        }
+        .login-show .close{
+            width: 35px;
+            height: 35px;
+            
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .login-show .close img{
+            width: 100%;
+            height: 100;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .login-show form{
+            position: absolute;
+            top: 15%;
+            left: 50px;
+            display: grid;
+            place-items: center;
+        }
+        .login-show form input{
+            display: block;
+            margin: 5px 0;
+            width: 400px;
+            height: 50px;
+            border:none;
+            border-radius: 100px;
+            box-shadow: 5px 5px 30px rgb(82, 82, 82) inset;
+            text-align: center;
+            /* padding-left: 20px; */
+            font-size: 1.30em;
+        }
+        
+        
+        @keyframes rotate-x{
+            0%{transform: rotateX(50deg);}
+            10%{transform: rotateX(-50deg);}
+            20%{transform: rotateX(40deg);}
+            30%{transform: rotateX(-40deg);}
+            40%{transform: rotateX(30deg);}
+            50%{transform: rotateX(-30deg);}
+            60%{transform: rotateX(20deg);}
+            70%{transform: rotateX(-20deg);}
+            80%{transform: rotateX(10deg);}
+            90%{transform: rotateX(-10deg);}
+            100%{transform: rotateX(0deg);}
+        }
+        
+        @keyframes moveing{
+            from{
+                width: 500px;
+                height: 0;
+                opacity: 0;
+            }
+            to{
+                width: 500px;
+                height: 250px;
+                opacity: 1;
+            }
+        }
+        
+        
+        .creat-account{
+            display: none;
+        }
+        .creat-account-show{
+            width: 100%;
+            height: 100%;
+            background-image: url("footer1.jpg");
+            background-size: cover;
+            position: absolute;
+            
+            display: grid;
+            place-items: center;
+            animation: show 2s ease-in-out forwards;
+        }
+        .creat-account-show .close{
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            transition: all 2s ease-in-out;
+        }
+        .creat-account-show .close img{
+            width: 100%;
+            height: 100;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        
+        .creat-account-show .regest-form{
+            width: 40%;
+            height: 50%;
+            text-align: center;
+            transition: all 2s ease-in-out;
+        }
+        .creat-account-show .regest-form input{
+            width: 100%;
+            height: 50px;
+            margin: 10px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.5em;
+            border: none;
+            box-shadow: 10px 10px 30px 1px #CCC inset;
+        }
+        .creat-account-show .regest-form input:last-of-type{
+            width: 20%;
+            cursor: pointer;
+        }
+        
+        
+        @keyframes show{
+            from{
+                width: 100%;
+                height: 0;
+                opacity: 0;
+            }
+            to{
+                width: 100%;
+                height: 100%;
+                opacity: 1;
+            }
+        }
+        
+        
+        
+        .creat-account-hidden{
+            width: 0%;
+            height: 0%;
+            background-image: url("footer1.jpg");
+            background-size: cover;
+            position: absolute;
+            top: 80px;
+            display: grid;
+            place-items: center;
+            animation: hidden 2s ease-in-out forwards;
+        }
+        .creat-account-hidden .close{
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .creat-account-hidden .close img{
+            width: 100%;
+            height: 100;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        
+        .creat-account-hidden .regest-form{
+            width: 40%;
+            height: 50%;
+            text-align: center;
+        }
+        .creat-account-hidden .regest-form input{
+            width: 100%;
+            height: 50px;
+            margin: 10px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.5em;
+            border: none;
+            box-shadow: 10px 10px 30px 1px #CCC inset;
+        }
+        .creat-account-hidden .regest-form input:last-of-type{
+            width: 20%;
+            cursor: pointer;
+        }
+        
+        @keyframes hidden{
+            from{
+                width: 100%;
+                height: 100%;
+                opacity: 1;
+            }
+            to{
+                width: 100%;
+                height: 0%;
+                opacity: 0;
+                display: none;
+            }
+        }
+        
+        
+        
+        
+        
+        .meals,.drinks,.desserts{
+            width: 100%;
+            margin: auto;
+            
+            background-color: #ffffff;
+        }
+        .meals .meal,
+        .drinks .drink,
+        .desserts .dessert{
+            width: 95%;
+            height: 300px;
+            margin: auto;
+            margin-top: 30px;
+            background-color: rgb(233, 232, 232);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .meals h1,
+        .drinks h1,
+        .desserts h1{
+            text-align: center;
+            padding-top: 100px;
+            font-size: 5em;
+            text-transform: uppercase;
+            color: #252525;
+        }
+        
+        
+        .meals .meal .meal-image,
+        .drinks .drink .drink-image,
+        .desserts .dessert .dessert-image{
+            width: 20%;
+            height: 100%;
+            background-color: aqua;
+            float: left;
+        }
+        .meals .meal .meal-image img,
+        .drinks .drink .drink-image img,
+        .desserts .dessert .dessert-image img{
+            width: 100%;
+            height: 100%;
+        }
+        .meals .meal .meal-image img:hover,
+        .drinks .drink .drink-image img:hover,
+        .desserts .dessert .dessert-image img:hover{
+            width: 105%;
+            height: 105%;
+            transition: all 1s ease-in-out;
+        }
+        
+        .meals .meal .meal-caption,
+        .drinks .drink .drink-caption,
+        .desserts .dessert .dessert-caption{
+            width: 55%;
+            height: 100%;
+            margin: 0 1.5%;
+            float: left;
+            color: #080f0b;
+            font-size: 1.25em;
+            padding: 20px 0px;
+        }
+        
+        .meals .meal .meal-price,
+        .drinks .drink .drink-price,
+        .desserts .dessert .dessert-price{
+            width: 10%;
+            height: 100%;
+            float: left;
+            display: grid;
+            place-items: center;
+            font-size: 1.5em;
+            color:#002e15;
+        }
+        .meals .meal .buttons input,
+        .drinks .drink .buttons input,
+        .desserts .dessert .buttons input{
+            width: 90%;
+            height: 15%;
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            border-radius: 100px;
+            border: none;
+            box-shadow: 10px 10px 30px 2px rgb(128, 127, 127) ;
+        }
+        
+        .meals .meal .buttons,
+        .drinks .drink .buttons,
+        .desserts .dessert .buttons{
+            width: 10.5%;
+            height: 100%;
+            margin-left: 1.5%;
+            float: left;
+            padding-top: 5%;
+        
+        }
+        .meals .meal .buttons button,
+        .drinks .drink .buttons button,
+        .desserts .dessert .buttons button{
+            width: 90%;
+            height: 15%;
+            margin-top: 3%;
+            border-radius: 100px;
+            border: none;
+            background-color: #0c0b09;
+            color: #DDD;
+            font-size: 1.5em;
+            text-transform: capitalize;
+            cursor: pointer;
+        }
+        
+        
+        .meals .meal .buttons button:last-of-type,
+        .drinks .drink .buttons button:last-of-type,
+        .desserts .dessert .buttons button:last-of-type{
+            opacity: 1;
+        }
+        
+        
+        .meals .meal .buttons button:hover,
+        .drinks .drink .buttons button:hover,
+        .desserts .dessert .buttons button:hover{
+            background-color:#252525;
+            transition: all .5s ease-in-out;
+        }
+        
+        
+    </style>
+    <title><%= pagetitle %></title>
+</head>
+<body>

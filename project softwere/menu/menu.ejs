@@ -1,0 +1,200 @@
+<%- include('menu_header.ejs') %>
+    <nav class="nav-par">
+        <div class="links">
+        </div>
+        <div class="logo">
+            <a href="../home"><img src="logo.png"></a>
+        </div>
+        <div class="regest">
+            <button id="login">login</button>
+            <button id="new-account">creat account</button>
+        </div>
+    </nav>
+
+    <div class="login" id="show-login">
+        <div class="close">
+            <img src="close.png" id="close-login">
+        </div>
+        <form action="/menu/sub" method="POST">
+            <input type="text" name="user_em" placeholder="e mail">
+            <input type="password" name="password" placeholder="password">
+            <input type="submit">
+        </form>
+    </div>
+
+
+
+    <div class="creat-account" id="creat-account">
+        <div class="close">
+            <img src="close.png" id="close-regest-form">
+        </div>
+        <div class="regest-form">
+            <form action="/menu/add" method="POST">
+                <input type="text" name="first_name" placeholder="First Name">
+                <input type="text" name="last_name" placeholder="Last Name">
+                <input type="number" name="phone" placeholder="Phone Number">
+                <input type="text" name="address" placeholder="address">
+                <input type="email" name="email" placeholder="E-mail">
+                <input type="password" name="password" placeholder="Password">
+                <input type="submit" value="Signin">
+            </form>
+        </div>
+
+    </div>
+
+
+    <div class="meals">
+        <h1>meals menu</h1>
+        <% if(item.length >0) { %>
+            <% item.forEach(function(item,index){ %>
+                <% if(item.kind == 'meal') { %>
+                    <div class="meal">
+                        <div class="meal-image">
+                            <img src="<%= item.photo %>">
+                        </div>
+                        <div class="meal-caption"><%= item.description %></div>
+                        <div class="meal-price"><%= item.meal_price %>$</div>
+                        <div class="buttons">
+                            <% if(user != 'null') { %> 
+                                <% flag=0%>
+                                <% orders.forEach(function(ord,ind){ %>
+                                    <% if(ord.user_num == num && item.meal_id == ord.meal_num) { %>
+                                        <% flag=1%>
+                                        
+                                    <% } %>
+                                <% }); %>
+                                <% if(flag == 0) { %>
+                                <form action="/menu_ord<%=item.meal_id %>" method="POST">
+                                    <button id="meal-order">order</button>
+                                </form><% } %>
+                                <% if(flag == 1) { %>
+                                <form action="/menu_del<%=item.meal_id %>" method="POST"> 
+                                    <button id="meal-disorder">disorder</button>
+                                </form><% } %>
+                            <% }else{ %> 
+                                <p>plese register</p> 
+                            <% } %> 
+                        </div>
+                    </div>
+                <% } %>  
+            <% }); %> 
+        <% } %>
+    </div>
+
+    <div class="drinks">
+        <h1>drinks menu</h1>
+        <% if(item.length >0) { %>
+            <% item.forEach(function(item,index){ %>
+                <% if(item.kind == 'drink') { %>
+                    <div class="drink">
+                        <div class="drink-image">
+                            <img src="<%= item.photo %>">
+                        </div>
+                        <div class="drink-caption"><%= item.description %></div>
+                        <div class="drink-price"><%= item.meal_price %>$</div>
+                        <div class="buttons">
+                            <% if(user != "") { %>
+                                <% flag=0%>
+                                <% orders.forEach(function(ord,ind){ %>
+                                    <% if(ord.user_num == num && item.meal_id == ord.meal_num) { %>
+                                        <% flag=1%>
+                                        
+                                    <% } %>
+                                <% }); %>
+                                <% if(flag == 0) { %>
+                            <form action="/menu_ord<%=item.meal_id %>" method="POST">
+                                <button id="drink-order">order</button>
+                            </form>
+                            <% } %>
+                            <% if(flag == 1) { %>
+                            <form action="/menu_del<%=item.meal_id %>" method="POST">
+                                <button id="drink-disorder">disorder</button>
+                            </form>
+                            <% } %>
+                            <% }else{ %> 
+                                <p>plese register</p> 
+                            <% } %> 
+                        </div>
+                    </div>
+                <% } %>  
+            <% }); %> 
+        <% } %>   
+    </div>
+
+    <div class="desserts">
+        <h1>desserts menu</h1>
+        <% if(item.length >0) { %>
+            <% item.forEach(function(item,index){ %>
+                <% if(item.kind == 'dessert') { %>
+                    <div class="dessert">
+                        <div class="dessert-image">
+                            <img src="<%= item.photo %>">
+                        </div>
+                        <div class="dessert-caption"><%= item.description %></div>
+                        <div class="dessert-price"><%= item.meal_price %>$</div>
+                        <div class="buttons">
+                            <% if(user != "") { %>
+                                <% flag=0%>
+                                <% orders.forEach(function(ord,ind){ %>
+                                    <% if(ord.user_num == num && item.meal_id == ord.meal_num) { %>
+                                        <% flag=1%>
+                                        
+                                    <% } %>
+                                <% }); %>
+                                <% if(flag == 0) { %>
+                            <form action="/menu_ord<%=item.meal_id %>" method="POST">
+                                <button id="dessert-order">order</button>
+                            </form><% } %>
+                            <% if(flag == 1) { %>
+                            <form action="/menu_del<%=item.meal_id %>" method="POST">
+                                <button id="dessert-disorder">disorder</button>
+                            </form>
+                            <% } %>
+                            <% }else{ %> 
+                                <p>plese register</p> 
+                            <% } %> 
+                        </div>
+                    </div>
+                <% } %>  
+            <% }); %> 
+        <% } %>
+    </div>
+    <script>
+        var my_div = document.getElementById("show-login"),
+        my_login = document.getElementById("login"),
+        my_new_acc = document.getElementById("new-account"),
+        my_image = document.getElementById("close-login"),
+        new_acc_div = document.getElementById("creat-account"),
+        close_regest = document.getElementById("close-regest-form");
+        
+    
+    
+    my_login.onclick = function(){
+        'use strict';
+        my_div.className = "login-show";
+    
+    }    
+    
+    my_image.onclick = function(){
+        'use strict';
+        my_div.className = "login";
+    }
+    
+    my_new_acc.onclick = function(){
+        'use strict';
+        new_acc_div.className = "creat-account-show ";
+    }
+    
+    close_regest.onclick = function(){
+        'use strict';
+        new_acc_div.className = "creat-account-hidden";
+    }
+    
+    
+    
+    
+    </script>
+<%- include('menu_footer.ejs') %>
+
+
+

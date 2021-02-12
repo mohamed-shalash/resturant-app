@@ -1,0 +1,532 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+
+    
+}
+.container{
+    width: 100%;
+    height: 1500px;
+    background-image: url(rest2.jpg);
+    background-size: cover;
+    position: relative;
+
+}
+.container .nav-par {
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    position: fixed;
+    background-color: black;
+    opacity: .9;
+    z-index: 4;
+}
+.container .nav-parscroll {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    position: fixed;
+    z-index: 1;
+    background-color: black;
+}
+.container .nav-par .logo-menue{
+    width: 25%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+
+}
+.container .nav-par .logo-menue .logo{
+    width: 50%;
+    margin-top: 15px;
+    float: right;
+    height: 100%;
+}
+.container .nav-par .logo-menue .logo img{
+    width: 100%;
+    height: 80%;
+}
+
+.container .nav-par .logo-menue .menue{
+    width: 20%;
+    height: 99%;
+    float: left;
+    display: grid;
+    place-items: center;
+    border-right: .5px solid #FFF;
+    border-bottom: .5px solid #FFF ;
+}
+.container .nav-par .logo-menue .menue .open-menue{
+    background-color: black;
+    width: 30%;
+    border: none;
+}
+.container .nav-par .logo-menue .menue .open-menue-hidden{
+    display: none;
+}
+.container .nav-par .logo-menue span{
+    width: 20%;
+    color: #FFF;
+}
+.container .nav-par .logo-menue span hr{
+    margin-top: 5px;
+}
+
+.container .nav-par .logo-menue .menue .close-menue{
+    
+    background-color: black;
+    width: 30%;
+    border: none;
+}
+.container .nav-par .logo-menue .menue .close-menue-hidden{
+    background-color: black;
+    width: 30%;
+    border: none;
+    display: none;
+}
+
+.container .nav-par .logo-menue .menue .close-menue img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.container .nav-par .links{
+    width: 35%;
+    float: right;
+    overflow: hidden;
+}
+.container .nav-par .links a{
+    text-decoration: none;
+    color: #FFF;
+    display: grid;
+    place-items: center;
+    font-size: 1.25em;
+    float: left;
+    border: .5px solid #FFF;
+    border-top: 0px;
+    width: 32.89%;
+    height: 79px;
+}
+.container .nav-par .links a:last-of-type{
+    border-right: 0px;
+}
+.container .nav-par .links a:hover{
+    color: black;
+    background-color: rgb(228, 223, 223);
+    transition: all .5s ease-in-out;
+}
+
+
+
+.container .header{
+    width: 100%;
+    height: 65%;
+    position: absolute;
+    top: 80px;
+    overflow: hidden;
+
+}
+
+
+.container .header .caption{
+    width: 94.44%;
+    height: 100%;
+    float: right;
+    color: rgb(216, 203, 203);
+
+}
+.container .header .caption h3{
+    margin: 100px 50px 20px  ;
+    font-size: 3em;
+    font-weight: normal;
+    font-family: "freight-big-pro";
+}
+.container .header .caption h1{
+    margin: 0px 50px 20px  ;
+    font-size: 13em;
+    font-weight: normal;
+    font-family: "freight-big-pro";
+}
+
+
+
+.container .header .left{
+    width: 5%;
+    height: 100%;
+    float: left;
+    border-right: .5px solid #FFF;
+    color: rgb(216, 203, 203);
+    
+}
+.container .header .left p{
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-top: 300px;
+    display: grid;
+    place-items: center;
+
+}
+.container .header .left .media{
+    width: 100%;
+    height: 150px;
+    margin-top: 280px;
+    display: grid;
+    place-items: center;
+}
+.container .header .left .media img{
+    display: block;
+    width: 80%;
+    height: 80%;
+}
+
+.container .header .left .media img:hover{
+    width: 85%;
+    height: 85%;
+    transition: all .5s ease-in-out;
+}
+
+
+
+
+
+.container .our-mission{
+    width: 90%;
+    height: 900px;
+    position: absolute;
+    top: 70%;
+    background-image: url(footer-bg.jpg);
+    color: rgb(216, 203, 203);
+    
+
+}
+.container .our-mission h2{
+    text-transform: capitalize;
+    font-size: 6em;
+    font-weight: normal;
+    margin: 50px 0px 20px 200px;
+    font-family: "freight-big-pro";
+}
+.container .our-mission .our{
+    width: 60%;
+    margin-left: 30%;
+    overflow: hidden;
+}
+.container .our-mission .our p{
+    width: 45% ;
+    line-height: 1.5;
+    margin-right: 10%;
+    float: left;
+}
+.container .our-mission .our p:last-of-type{
+    margin-right: 0;
+}
+.container .our-mission a{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 2em;
+    position: absolute;
+    left: 70%;
+}
+.container .our-mission img{
+    width: 85%;
+position: absolute;
+left: 15.1%;
+padding: 0;
+top: 50%;
+height: 750px;
+
+}
+
+
+
+.images{
+    width: 100%;
+    height: 500px;
+
+    position: relative;
+    top: 600px;
+}
+.images img{
+    width: 550px;
+    height: 550px;
+    animation: rotate1 40s infinite linear;
+    animation-delay: 0s;
+}
+.images img:first-of-type{
+    position: absolute;
+    top: 0;
+    left: 70%;
+}
+.images img:nth-of-type(2){
+    position: absolute;
+    top: 400px;
+    left: 2%;
+}
+.images img:nth-of-type(3){
+    position: absolute;
+    top: 600px;
+    left: 65%;
+}
+.images img:nth-of-type(4){
+    position: absolute;
+    top: 900px;
+    left: 10%;
+}
+.images img:nth-of-type(5){
+    position: absolute;
+    top: 1000px;
+    left: 50%;
+}
+
+
+@keyframes rotate1{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotate{
+    5%{transform: rotate(18deg);}
+    10%{transform: rotate(36deg);}
+    15%{transform: rotate(54deg);}
+    20%{transform: rotate(72deg);}
+    25%{transform: rotate(90deg);}
+    30%{transform: rotate(108deg);}
+    35%{transform: rotate(126deg);}
+    40%{transform: rotate(144deg);}
+    45%{transform: rotate(162deg);}
+    50%{transform: rotate(180deg);}
+    55%{transform: rotate(198deg);}
+    60%{transform: rotate(216deg);}
+    65%{transform: rotate(234deg);}
+    70%{transform: rotate(252deg);}
+    75%{transform: rotate(270deg);}
+    80%{transform: rotate(288deg);}
+    85%{transform: rotate(306deg);}
+    90%{transform: rotate(324deg);}
+    95%{transform: rotate(342deg);}
+    100%{transform: rotate(360deg);}
+
+
+    
+
+}
+
+
+
+
+
+
+.row{
+    width: 100%;
+    height: 700px;
+    position: absolute;
+    top: 3800px;
+    display: flex;
+    z-index: 0;
+
+}
+.row .menues{
+    width: 33%;
+    height: 100%;
+    margin-right: 10px;
+    opacity: .9;
+    animation: scale 5s ease-in-out infinite;
+
+}
+.row .menues:hover{
+    opacity: 1;
+    transition: all .5s ease-in-out;
+}
+.row .menues:first-of-type{
+    margin-left: 10px;
+    margin-top: 40px;
+    background-image: url("delivery.jpg");
+    animation-delay: 0s;
+}
+.row .menues:nth-of-type(2){
+    margin-top: 0px;
+    background-image: url("drink.jpg");
+    animation-delay: 1s;
+}
+
+.row .menues:last-of-type{
+    margin-top: 80px;
+    background-image: url("dessert.jpg");
+    animation-delay: 2s;
+}
+.row .menues a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 3em;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+@keyframes scale{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(30px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+.footer{
+    width: 100%;
+    height: 100px;
+    background-image: url("footer-bg.jpg");
+    position: absolute;
+    top: 4600px;
+    color: blanchedalmond;
+    display: grid;
+    place-items: center;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+
+
+
+.menue-selected{
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-image: url("footer-bg.jpg");
+    background-size: cover;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+}
+
+.menue-selected1{
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-image: url("footer-bg.jpg");
+    background-size: cover;
+    position: relative;
+    animation: appear 3s linear forwards;
+}
+.menue-selected1 .social{
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: absolute;
+    top: 60%;
+    left: 47%;
+
+}
+.menue-selected1 .social a{
+    width: 50px;
+    height: 50px;
+    float: left;
+    padding: 10px;
+}
+.menue-selected1 .social a img{
+    width: 100%;
+    height: 100%;
+}
+.menue-selected1 ul a{
+    text-decoration: none;
+    color: rgb(216, 211, 211);
+    
+}
+.menue-selected1 ul{
+    list-style: none;
+    font-size: 3em;
+    text-transform: uppercase;
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    text-align: center;
+    line-height: 1.25;
+}
+
+.menue-selected2{
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-image: url("footer-bg.jpg");
+    background-size: cover;
+    display: grid;
+    place-items: center;
+    animation: disappear 3s linear forwards;
+}
+
+.menue-selected2 .social{
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: absolute;
+    top: 60%;
+    left: 47%;
+
+}
+.menue-selected2 .social a{
+    width: 50px;
+    height: 50px;
+    float: left;
+    padding: 10px;
+}
+.menue-selected2 .social a img{
+    width: 100%;
+    height: 100%;
+}
+.menue-selected2 ul a{
+    text-decoration: none;
+    color: rgb(216, 211, 211);
+    
+}
+.menue-selected2 ul{
+    list-style: none;
+    font-size: 3em;
+    text-transform: uppercase;
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    text-align: center;
+    line-height: 1.25;
+}
+
+
+@keyframes appear{
+    from{
+        width: 0%;
+        height: 0%;
+        opacity: .8;
+    }
+    to{
+        width: 100%;
+        height: 100vh;
+        opacity: 1;
+    }
+}
+
+
+@keyframes disappear{
+    from{
+        width: 100%;
+        height: 100vh;
+        opacity: 1;
+    }
+    to{
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+    }
+}

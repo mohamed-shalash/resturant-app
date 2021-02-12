@@ -1,0 +1,18 @@
+create TABLE user_tbl(user_id int PRIMARY KEY AUTO_INCREMENT,user_name varchar(20),PASSWORD varchar(20),phonenum varchar(12));
+create TABLE meals_tbl(meal_id int PRIMARY KEY AUTO_INCREMENT,meal_name varchar(20),meal_price int,kind varchar(15),photo varchar(30),description varchar(50));
+create TABLE order_tbl(order_id int PRIMARY KEY AUTO_INCREMENT,user_num int,meal_num int,address varchar(30),nowornot boolean,thetime datetime);
+
+
+
+ALTER TABLE `order_tbl` ADD CONSTRAINT `order_user` FOREIGN KEY (`user_num`) REFERENCES `user_tbl`(`user_id`)
+ALTER TABLE `order_tbl` ADD CONSTRAINT `order_meal` FOREIGN KEY (`meal_num`) REFERENCES `meals_tbl`(`meal_id`)
+
+
+INSERT INTO `user_tbl`(`user_id`, `user_name`, `PASSWORD`, `phonenum`) VALUES (1,'mas','mas','01095623040');
+INSERT INTO `user_tbl`(`user_id`, `user_name`, `PASSWORD`, `phonenum`) VALUES (2,'negm','negm','01055663040');
+
+INSERT INTO `meals_tbl`(`meal_id`, `meal_name`, `meal_price`, `kind`, `photo`, `description`) VALUES (1,'fish',100,'food','E:\\books.jpg',null);
+INSERT INTO `meals_tbl`(`meal_id`, `meal_name`, `meal_price`, `kind`, `photo`, `description`) VALUES (2,'limon',20,'drink','E:\\dri.jpg',null);
+
+INSERT INTO `order_tbl`(`order_id`, `user_num`, `meal_num`, `address`, `nowornot`, `thetime`) VALUES (1,1,2,'kom hamada',true,null);
+INSERT INTO `order_tbl`(`order_id`, `user_num`, `meal_num`, `address`, `nowornot`, `thetime`) VALUES (2,2,1,'shbeen',false,'2020-12-30 18:6:00');

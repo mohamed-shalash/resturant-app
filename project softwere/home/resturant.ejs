@@ -1,0 +1,154 @@
+<%- include('resturant_header.ejs') %>
+
+<div class="container">
+
+    <nav class="nav-par">
+
+        <div class="logo-menue">
+
+            <div class="logo">
+                <a href="/home"><img src="logo.png"></a>
+            </div>
+            
+            
+                <div class="menue">
+                    <button class="open-menue" id="menue-button-open">
+                        <span>
+                            <hr>
+                            <hr>
+                            <hr>
+                        </span>
+                    </button>
+                    <button class="close-menue-hidden" id="menue-button-close">
+                        <img src="close.png">
+                    </button>
+                </div>
+
+
+        </div>
+
+        <div class="links">
+            <a href="#row">Order Online</a>
+            <a href="../about#gallery">Gallery</a>
+            <a href="../about">About Us</a>
+            
+
+        </div>
+
+    </nav>
+    <div class="menue-selected" id="menue-selected">   
+        <ul>
+            <li><a href="/home">home</a></li>
+            <li><a href="../about">about us</a></li>
+            <li><a href="../about#gallery">Gallery</a></li>
+        </ul> 
+        <div class="social">
+            <a href="#"><img src="facebook.png"></a>
+            <a href="#"><img src="instagram.png"></a>
+        </div>
+        
+    </div>
+
+    <div class="header">
+
+        <div class="caption">
+            <h3> Fresh ingredients from global sources</h3>
+            <h1>The best Japanese food</h1>
+        </div>
+
+
+        <div class="left">
+            <p>a <br>d <br>a<br>c <br>h<br>i </p>
+
+            <div class="media">
+                <a href="#"><img src="facebook.png"></a>
+                <a href="#"><img src="instagram.png"></a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="our-mission">
+        <h2>our mission</h2>
+        <div class="our"> 
+            <p>Adachi restaurant is a globally influenced Japanese-inspired restaurant nestled in the heart of Birmingham,
+                Michigan in the Victorian Peabody Mansion.
+                Executive Chef Lloyd Roberts brings with him years of experience and leads the kitchen team with innovation and superb technique. 
+                Adachi offers an array of gastronomic adventures with many small and large plates, 
+                speciality craft cocktails and a full sushi bar equipped with sashimi and nigiri options flown fresh from Japan. 
+                Sourcing the freshest ingredients both locally and internationally, 
+                guests dining with us can taste the heartfelt commitment to quality.
+            </p>
+            <p>
+                Adachi distinguishes itself by emphasizing on the social experience and taking a vibe-driven approach to fine dining.
+                The dining room, sushi lounge and cocktail bar evokes a fun sense of style matched by the chic ambiance and decor.
+                Whether you are joining us for dinner, cocktails, a private party or any special occasion,
+                Adachi opens its doors to you and promises to make the experience special and memorable.
+                The team eagerly awaits to show you world-class hospitality.
+            </p>
+        </div>
+        <a href="#row">VIEW OUR MENU</a>
+
+        <img src="food1.jpg">
+
+    </div>
+
+</div>
+
+
+<div class="images">
+    <img src="food2.png" title="food2">
+    <img src="food3.png" title="food3">
+    <img src="food4.png" title="food4">
+    <img src="food5.png" title="food5">
+    <img src="food6.png" title="food6">
+
+</div>
+<div class="row" id="row">
+    <div class="menues">
+            <a href="../menu:1">
+                <h2>Delivery Menue</h2>
+            </a>
+    </div>
+    <div class="menues">
+            <a href="../menu:2">
+                <h2>Drink Menue</h2>
+            </a>
+    </div>
+    <div class="menues">
+            <a href="../menu:3">
+                <h2>Dessert Menue</h2>
+            </a>
+    </div>
+</div>
+
+<div class="footer">
+    &copy copyright 2020 
+
+</div>
+
+<script>
+    var my_button_open = document.getElementById("menue-button-open"),
+    my_div = document.getElementById("menue-selected"),
+    my_body = document.querySelector('body'),
+    my_button_close = document.getElementById("menue-button-close");
+
+
+
+my_button_open.onclick = function(){
+    'use strict';
+    my_div.className = "menue-selected1";
+    my_body.className = "body1";
+    my_button_open.className = "open-menue-hidden";
+    my_button_close.className = "close-menue";
+};
+
+my_button_close.onclick = function(){
+    'use strict';
+    my_div.className = "menue-selected2";
+    my_button_open.className = "open-menue";
+    my_button_close.className = "close-menue-hidden";
+
+}
+</script>
+<%- include('resturant_footer.ejs') %>
